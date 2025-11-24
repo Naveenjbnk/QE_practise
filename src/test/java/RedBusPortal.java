@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.List;
 
 public class RedBusPortal {
     WebDriver driver = new ChromeDriver();
@@ -32,11 +33,45 @@ public class RedBusPortal {
         WebElement destbutton = driver.findElement(By.xpath("//div[@class='labelCityWrapper___dd1d0e']/div[text()='To']"));
 
         WebElement inputTodata = driver.findElement(By.xpath("//input[@id='srcDest']"));
+        // Used the exact dest part to search for the element
         inputTodata.sendKeys("Chennai");
+        WebElement Tobutton = driver.findElement(By.xpath("//div[@class='leftContent___84cec0']//div[text()='CMBT, Chennai, Chennai']"));
+
+        Tobutton.click();
+       //am using list to store in all Destintion
+
+//       List <WebElement> listDestElement = driver.findElements(By.xpath("//div[@class='leftContent___84cec0']//div"));
+//       WebElement FirstDataget = listDestElement.get(0);
+//       String eleme = FirstDataget.getText();
+
+     //  System.out.println(eleme);
 
 
+        //Date picker
+        WebElement datePickerInput = driver.findElement(By.xpath("//div[@class='dojWrapper___9b2a92']"));
+        datePickerInput.click();
+        //choosing 26 th date  from the date picker using the text value am choosing
+        WebElement select_Date = driver.findElement(By.xpath("//span[@aria-hidden='true' and text()='27']"));
+        select_Date.click();
+
+        //if you want to choose the women optin
+
+        WebElement WomenSwitch = driver.findElement(By.xpath("//input[@id='switch' and @type='checkbox']"));
+        WomenSwitch.click();
+        //closing the alert tab
+        WebElement gotit = driver.findElement(By.xpath("//button[@class='primaryButton___6f5313  ']"));
+        gotit.click();
+        //click on search button
+
+        WebElement searchBus = driver.findElement(By.xpath("//button[@class='primaryButton___6f5313 searchButtonWrapper___1e2c20 ']"));
+        searchBus.click();
+        // I choose 2 from the list
+
+        WebElement chooseBus = driver.findElement(By.xpath("//div[@class='sectionWrapper__ind-search-styles-module-scss-AITjK  ']//ul//li[2]"));
+        chooseBus.click();
 
 
 
     }
 }
+
