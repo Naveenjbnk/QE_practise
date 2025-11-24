@@ -75,7 +75,7 @@ public class RedBusPortal {
         chooseBus.click();
 
         //select seat 3
-        String seatXpath = "//div[@class='seat__ind-seat-styles-module-scss-tUu8R ' and @id='3']";
+        String seatXpath = "//div[@class='seat__ind-seat-styles-module-scss-tUu8R ' and @id='16W']";
         WebElement chooseSeat = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(seatXpath)));
         chooseSeat.click();
 
