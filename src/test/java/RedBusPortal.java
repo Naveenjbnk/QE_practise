@@ -32,7 +32,7 @@ public class RedBusPortal {
         WebElement destbutton = driver.findElement(By.xpath("//div[@class='labelCityWrapper___dd1d0e']/div[text()='To']"));
 
         WebElement inputTodata = driver.findElement(By.xpath("//input[@id='srcDest']"));
-        //inputTodata.sendKeys("Chennai");
+        inputTodata.sendKeys("Chennai");
 
 
 
